@@ -4,18 +4,33 @@
 #include <iostream>
 using namespace std;
 
-double rerata(double a, double b) {
+double rerata(double a,double b){
     return (a + b) / 2;
 
 }
 
-string status(double rata) {
-    if (rata )
+string status(double rata){
+    if (rata >= 70)
+        return "diterima";
+    else
+        return "tidak diterima";
 }
 
-int main()
-{
-    std::cout << "Hello World!\n";
+string status2(double rata,double nil){
+    if (rata >= 70 || nil > 80)
+        return "diterima";
+    else
+        return "tidak diterima";
+}
+int main(){
+    double nilM, nilB;
+    cout << "masukkan nilai matematika = ";
+    cin >> nilM;
+    cout << "masukkan nilai Bahasa Inggris = ";
+    cin >> nilB;
+    cout << "status kelulusan = " << status(rerata(nilM, nilB));
+    cout << "\nstatus kelulusan ke 2 = " << status2(rerata(nilM, nilB), nilM);
+    return 0;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
